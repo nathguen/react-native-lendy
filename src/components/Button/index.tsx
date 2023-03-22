@@ -1,15 +1,26 @@
-/* eslint-disable react-native/no-inline-styles */
 import { Text } from '@rneui/themed';
-import React, { useMemo } from 'react';
-import { ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native';
-import CommonStyles from '../../common/styles';
+import React, { useMemo, useState } from 'react';
+import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
 import Colors from '../../common/colors';
 import FontStyles from '../../common/fonts';
-import { View } from 'react-native';
+import CommonStyles from '../../common/styles';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
+export enum ButtonSizes {
+  Small = 'small',
+  Medium = 'medium',
+  Large = 'large',
+}
+
+export type ButtonType = 'primary' | 'secondary' | 'tertiary';
+export enum ButtonTypes {
+  Primary = 'primary',
+  Secondary = 'secondary',
+  Tertiary = 'tertiary',
+}
 
 interface ButtonProps {
+  type?: ButtonType | ButtonTypes;
   onPress: () => void;
   title?: string;
   backgroundColor?: string;
@@ -24,14 +35,17 @@ interface ButtonProps {
   icon?: any;
   iconPosition?: 'left' | 'right';
   borderColor?: string;
+
+  fullWidth?: boolean; // indicates if the button should take up its full width
 }
 
 const Button = ({
+  type = ButtonTypes.Primary,
   onPress,
   title,
-  backgroundColor = Colors.LightYellow,
+  backgroundColor,
   color,
-  size = 'small',
+  size = ButtonSizes.Large,
   buttonStyle,
   titleStyle,
   containerStyle,
@@ -41,76 +55,270 @@ const Button = ({
   icon,
   iconPosition = 'right',
   borderColor,
+  fullWidth = false,
 }: ButtonProps) => {
+  const [isPressedDown, setIsPressedDown] = useState(false);
+
   const Wrapper = useMemo(() => {
-    return disabled ? View : TouchableOpacity;
+    return disabled ? View : Pressable;
   }, [disabled]);
+
+  const isDisabled = useMemo(() => {
+    return disabled || isLoading;
+  }, [disabled, isLoading]);
+
+  const buttonTypeStyle = useMemo(() => {
+    switch (type) {
+      case ButtonTypes.Primary:
+        return buttonStyles.primaryButton;
+
+      case ButtonTypes.Secondary:
+        return buttonStyles.secondaryButton;
+
+      default:
+        return buttonStyles.tertiaryButton;
+    }
+  }, [type]);
+
+  const buttonTypeTextStyle = useMemo(() => {
+    switch (type) {
+      case ButtonTypes.Primary:
+        return buttonStyles.primaryButtonText;
+
+      default:
+        return {};
+    }
+  }, [type]);
+
+  const disabledButtonStyle = useMemo(() => {
+    if (isDisabled) {
+      if (type === ButtonTypes.Primary) {
+        return buttonStyles.primaryButtonDisabled;
+      }
+      if (type === ButtonTypes.Secondary) {
+        return buttonStyles.secondaryButtonDisabled;
+      }
+    }
+
+    return {};
+  }, [isDisabled, type]);
+
+  const pressedButtonStyle = useMemo(() => {
+    if (isPressedDown) {
+      if (type === ButtonTypes.Primary) {
+        return buttonStyles.primaryButtonPressed;
+      }
+      if (type === ButtonTypes.Secondary) {
+        return buttonStyles.secondaryButtonPressed;
+      }
+    }
+
+    return {};
+  }, [isPressedDown, type]);
+
+  const disabledButtonTextStyle = useMemo(() => {
+    if (isDisabled) {
+      if (type === ButtonTypes.Primary) {
+        return buttonStyles.primaryButtonTextDisabled;
+      }
+      if (type === ButtonTypes.Secondary) {
+        return buttonStyles.secondaryButtonTextDisabled;
+      }
+      if (type === ButtonTypes.Tertiary) {
+        return buttonStyles.tertiaryButtonTextDisabled;
+      }
+    }
+
+    return {};
+  }, [isDisabled, type]);
+
+  const pressedButtonTextStyle = useMemo(() => {
+    if (isPressedDown) {
+      if (type === ButtonTypes.Secondary) {
+        return buttonStyles.secondaryButtonTextPressed;
+      }
+      if (type === ButtonTypes.Tertiary) {
+        return buttonStyles.tertiaryButtonTextPressed;
+      }
+    }
+
+    return {};
+  }, [isPressedDown, type]);
 
   return (
     // @ts-ignore
     <Wrapper
       onPress={disabled ? () => {} : onPress}
+      onPressIn={() => setIsPressedDown(true)}
+      onPressOut={() => setIsPressedDown(false)}
+      // @ts-ignore
       style={{
+        ...buttonStyles.wrapper,
         ...containerStyle,
-        borderRadius: 16,
-        alignSelf: 'flex-start',
-        ...buttonStyles.baseButton,
-        flexDirection: iconPosition === 'left' ? 'row-reverse' : 'row',
+
+        // button sizes
         ...(size === 'small' ? buttonStyles.smallButton : {}),
         ...(size === 'medium' ? buttonStyles.mediumButton : {}),
         ...(size === 'large' ? buttonStyles.largeButton : {}),
-        ...(disabled || isLoading ? buttonStyles.disabledButton : {}),
-        ...((disabled || isLoading) && size === 'medium'
-          ? buttonStyles.mediumButtonDisabled
-          : {}),
+
+        // full width
+        ...(fullWidth && buttonStyles.fullWidthButton),
+
+        // button type
+        ...buttonTypeStyle,
+
+        // disabled style
+        ...disabledButtonStyle,
+
+        // pressed style
+        ...pressedButtonStyle,
+
+        ...buttonStyles.baseButton,
+
+        // icon position
+        ...(iconPosition === 'left' && buttonStyles.wrapperReverse),
+
         ...buttonStyle,
-        backgroundColor,
-        [borderColor ? 'borderColor' : '']: borderColor,
+        ...(!!backgroundColor && { backgroundColor }),
+        ...(!!borderColor && { borderColor }),
       }}
     >
-      {!!title && (
-        <Text
-          // @ts-ignore
-          style={{
-            ...buttonStyles.baseButtonText,
-            ...(size === 'small' ? buttonStyles.smallButtonText : {}),
-            ...(size === 'medium' ? buttonStyles.mediumButtonText : {}),
-            ...(size === 'large' ? buttonStyles.largeButtonText : {}),
-            ...(disabled && size === 'medium'
-              ? buttonStyles.mediumButtonTextDisabled
-              : {}),
-            ...titleStyle,
-            ...(color ? { color } : {}),
-          }}
-        >
-          {isLoading ? '' : title}
-        </Text>
-      )}
+      <>
+        {!!title && (
+          <Text
+            // @ts-ignore
+            style={{
+              ...buttonStyles.baseButtonText,
 
-      {!!isLoading && (
-        <View style={buttonStyles.loadingIconWrapper}>
-          <ActivityIndicator
-            style={buttonStyles.loadingIcon}
-            color={loadingColor}
-          />
-        </View>
-      )}
+              // button text sizes
+              ...(size === 'small' ? buttonStyles.smallButtonText : {}),
+              ...(size === 'medium' ? buttonStyles.mediumButtonText : {}),
+              ...(size === 'large' ? buttonStyles.largeButtonText : {}),
 
-      {!!icon && (
-        <View
-          style={{
-            marginLeft: !!title && iconPosition === 'left' ? 0 : 8,
-            marginRight: !!title && iconPosition === 'right' ? 0 : 8,
-          }}
-        >
-          {icon}
-        </View>
-      )}
+              // button type
+              ...buttonTypeTextStyle,
+
+              // disabled text style
+              ...disabledButtonTextStyle,
+
+              // pressed text style
+              ...pressedButtonTextStyle,
+
+              ...titleStyle,
+              ...(color ? { color } : {}),
+            }}
+          >
+            {isLoading ? '' : title}
+          </Text>
+        )}
+
+        {!!isLoading && (
+          <View style={buttonStyles.loadingIconWrapper}>
+            <ActivityIndicator
+              style={buttonStyles.loadingIcon}
+              color={loadingColor}
+            />
+          </View>
+        )}
+
+        {!!icon && (
+          <View
+            style={{
+              ...(!!title &&
+                iconPosition === 'left' &&
+                buttonStyles.iconWrapperPushRight),
+              ...(!!title &&
+                iconPosition === 'right' &&
+                buttonStyles.iconWrapperPushLeft),
+            }}
+          >
+            {icon}
+          </View>
+        )}
+      </>
     </Wrapper>
   );
 };
 
 export const buttonStyles = StyleSheet.create({
+  wrapper: {
+    borderRadius: 16,
+    alignSelf: 'flex-start',
+    flexDirection: 'row',
+  },
+
+  wrapperReverse: {
+    flexDirection: 'row-reverse',
+  },
+
+  fullWidthButton: {
+    width: '100%',
+  },
+
+  // PRIMARY BUTTON
+  primaryButton: {
+    backgroundColor: Colors.Dark,
+    borderColor: Colors.Dark,
+    elevation: 1,
+  },
+
+  primaryButtonPressed: {
+    backgroundColor: Colors.Yellow,
+    borderColor: Colors.Yellow,
+  },
+
+  // PRIMARY BUTTON TEXT
+  primaryButtonText: {
+    color: Colors.White,
+  },
+
+  primaryButtonDisabled: {
+    backgroundColor: Colors.MediumYellow,
+    borderColor: Colors.MediumYellow,
+  },
+
+  primaryButtonTextDisabled: {
+    color: Colors.Gray,
+  },
+
+  // SECONDARY BUTTON
+  secondaryButton: {
+    borderColor: Colors.Dark,
+    backgroundColor: Colors.Transparent,
+  },
+
+  secondaryButtonPressed: {
+    borderColor: Colors.Yellow,
+  },
+
+  secondaryButtonDisabled: {
+    borderColor: Colors.Gray,
+  },
+
+  // SECONDARY BUTTON TEXT
+  secondaryButtonTextPressed: {
+    color: Colors.Yellow,
+  },
+
+  secondaryButtonTextDisabled: {
+    color: Colors.Gray,
+  },
+
+  // TERTIARY BUTTON
+  tertiaryButton: {
+    backgroundColor: Colors.Transparent,
+    borderColor: Colors.Transparent,
+  },
+
+  // TERTIARY BUTTON TEXT
+  tertiaryButtonTextPressed: {
+    color: Colors.Yellow,
+  },
+
+  tertiaryButtonTextDisabled: {
+    color: Colors.Gray,
+  },
+
   baseButton: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -128,13 +336,12 @@ export const buttonStyles = StyleSheet.create({
     minHeight: 30,
     minWidth: 40,
   },
+
   smallButtonText: {
     ...CommonStyles.Body,
   },
 
   mediumButton: {
-    backgroundColor: Colors.Transparent,
-    borderColor: Colors.Dark,
     borderWidth: 2,
     borderRadius: 28,
     paddingHorizontal: 28,
@@ -142,32 +349,26 @@ export const buttonStyles = StyleSheet.create({
     height: 60,
     minWidth: 100,
   },
-  mediumButtonDisabled: {
-    borderColor: Colors.DarkGray,
-  },
+
   mediumButtonText: {
     ...CommonStyles.Title3,
   },
-  mediumButtonTextDisabled: {
+
+  buttonDisabledText: {
     color: Colors.DarkGray,
   },
 
   largeButton: {
-    backgroundColor: Colors.Transparent,
-    borderColor: Colors.Dark,
     borderWidth: 3,
     borderRadius: 30,
     paddingHorizontal: 44,
     paddingVertical: 16,
   },
+
   largeButtonText: {
     fontFamily: FontStyles.medium,
     fontSize: 20,
     lineHeight: 24,
-  },
-
-  disabledButton: {
-    backgroundColor: Colors.DarkGray,
   },
 
   loadingIconWrapper: {
@@ -179,9 +380,18 @@ export const buttonStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
   loadingIcon: {
     margin: 0,
     padding: 0,
+  },
+
+  iconWrapperPushLeft: {
+    marginLeft: 8,
+  },
+
+  iconWrapperPushRight: {
+    marginRight: 8,
   },
 });
 

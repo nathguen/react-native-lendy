@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { ScreenTabs, Text } from 'react-native-lendy';
+import { ScreenTabs, Text, Wrapper } from 'react-native-lendy';
 
 const screenTabs: string[] = ['Tab One', 'Tab Two', 'Tab Three'];
 
@@ -8,7 +8,7 @@ const ScreenTabsScreen = () => {
   const [activeTab, setActiveTab] = useState(screenTabs[0]);
 
   return (
-    <View>
+    <Wrapper screen>
       <ScreenTabs
         defaultTab={activeTab}
         onChangeTab={setActiveTab}
@@ -38,7 +38,7 @@ const ScreenTabsScreen = () => {
           </Text>
         </View>
       )}
-    </View>
+    </Wrapper>
   );
 };
 

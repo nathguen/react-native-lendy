@@ -1,7 +1,7 @@
 const ScreenNames = {
   Home: 'HomeScreen',
   ScreenTabs: 'ScreenTabsScreen',
-  Button: 'ButtonButton',
+  Buttons: 'ButtonsScreen',
 };
 
 export default ScreenNames;
