@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-lendy';
+import { StyleSheet, View } from 'react-native';
+import { Button, multiply, Text, Colors } from 'react-native-lendy';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -12,7 +12,8 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button title="Press me" size="medium" onPress={() => {}} />
+      <Text color={Colors.Yellow}>Result: {result}</Text>
     </View>
   );
 }
