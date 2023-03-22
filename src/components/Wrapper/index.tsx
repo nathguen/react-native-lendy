@@ -15,6 +15,13 @@ interface WrapperProps extends ViewProps {
   bottom?: number;
   left?: number;
   right?: number;
+
+  /**
+   * Centers content vertically and horizontally in the wrapper
+   */
+  center?: boolean;
+  centerHorizontal?: boolean;
+  centerVertical?: boolean;
 }
 
 const Wrapper = ({
@@ -27,6 +34,7 @@ const Wrapper = ({
   baseHorizontal,
   baseVertical,
   screen,
+  center,
   ...props
 }: WrapperProps) => {
   return (
@@ -43,6 +51,7 @@ const Wrapper = ({
         ...(typeof bottom === 'number' && { bottom }),
         ...(typeof left === 'number' && { left }),
         ...(typeof right === 'number' && { right }),
+        ...(center && styles.centerContent),
 
         // @ts-ignore
         ...(!!props.style && props.style), // allows for style override
@@ -65,6 +74,10 @@ const styles = StyleSheet.create({
   },
   screenWrapper: {
     padding: 16,
+  },
+  centerContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 

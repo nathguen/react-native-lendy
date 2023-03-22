@@ -1,8 +1,12 @@
 import { camelCase } from 'lodash';
 import React, { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-import { Text as RNText, TextProps as RNTextProps } from 'react-native';
+import {
+  StyleSheet,
+  Text as RNText,
+  TextProps as RNTextProps,
+} from 'react-native';
 
+import { FontStyles } from '../../common';
 import CommonStyles from '../../common/styles';
 
 type TextType =
@@ -54,6 +58,8 @@ interface TextProps extends RNTextProps {
   left?: boolean;
   center?: boolean;
   right?: boolean;
+
+  bold?: boolean;
 }
 
 const Text = ({
@@ -62,6 +68,7 @@ const Text = ({
   left,
   center,
   right,
+  bold,
   ...props
 }: TextProps) => {
   const appliedStyles: StyleSheet.NamedStyles<any> = useMemo(() => {
@@ -95,6 +102,7 @@ const Text = ({
         ...(left && styles.textLeft), // text aligns => left
         ...(center && styles.textCenter), // text aligns => center
         ...(right && styles.textRight), // text aligns => right
+        ...(bold && { fontFamily: FontStyles.bold }), // bold
       }}
     />
   );
