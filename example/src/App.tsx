@@ -1,32 +1,32 @@
-import * as React from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { Button, multiply, Text, Colors } from 'react-native-lendy';
+import ScreenNames from 'example/src/constants/screenNames';
+import Home from 'example/src/screens/Home';
+import ScreenTabsScreen from 'example/src/screens/ScreenTabs';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Button title="Press me" size="medium" onPress={() => {}} />
-      <Text color={Colors.Yellow}>Result: {result}</Text>
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen
+          name={ScreenNames.Home}
+          component={Home}
+          options={{
+            title: 'Home',
+          }}
+        />
+        <Drawer.Screen
+          name={ScreenNames.ScreenTabs}
+          component={ScreenTabsScreen}
+          options={{
+            title: 'Screen Tabs',
+          }}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

@@ -1,6 +1,6 @@
 import { camelCase } from 'lodash';
 import React, { useMemo } from 'react';
-import type { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Text as RNText, TextProps as RNTextProps } from 'react-native';
 
 import CommonStyles from '../../common/styles';
@@ -50,9 +50,20 @@ interface TextProps extends RNTextProps {
   caption2?: boolean;
 
   color?: string;
+
+  left?: boolean;
+  center?: boolean;
+  right?: boolean;
 }
 
-const Text = ({ textType, color, ...props }: TextProps) => {
+const Text = ({
+  textType,
+  color,
+  left,
+  center,
+  right,
+  ...props
+}: TextProps) => {
   const appliedStyles: StyleSheet.NamedStyles<any> = useMemo(() => {
     if (textType && CommonStyles[textType]) {
       return CommonStyles[textType];
@@ -77,11 +88,28 @@ const Text = ({ textType, color, ...props }: TextProps) => {
     <RNText
       {...props}
       style={{
+        // @ts-ignore
+        ...(!!props.style && props.style),
         ...appliedStyles,
         ...(!!color && { color }), // allows custom color
+        ...(left && styles.textLeft), // text aligns => left
+        ...(center && styles.textCenter), // text aligns => center
+        ...(right && styles.textRight), // text aligns => right
       }}
     />
   );
 };
+
+const styles = StyleSheet.create({
+  textLeft: {
+    textAlign: 'left',
+  },
+  textCenter: {
+    textAlign: 'center',
+  },
+  textRight: {
+    textAlign: 'right',
+  },
+});
 
 export default Text;
