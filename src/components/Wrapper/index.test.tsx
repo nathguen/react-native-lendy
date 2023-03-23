@@ -1,53 +1,53 @@
-import { render, screen } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import React from 'react';
 
 import { Wrapper, Text } from '../';
 
 describe('Wrapper', () => {
   it('renders Wrapper', () => {
-    const container = render(<Wrapper />);
+    const { toJSON } = render(<Wrapper />);
 
-    expect(container).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Wrapper with children', () => {
-    const container = render(
+    const { toJSON, getByText } = render(
       <Wrapper>
         <Text>Test</Text>
       </Wrapper>
     );
 
-    expect(screen.getByText('Test')).toBeTruthy();
-    expect(container).toMatchSnapshot();
+    expect(getByText('Test')).toBeTruthy();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Wrapper with baseHorizontal', () => {
-    const container = render(<Wrapper baseHorizontal />);
+    const { toJSON } = render(<Wrapper baseHorizontal />);
 
-    expect(container).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Wrapper with baseVertical', () => {
-    const container = render(<Wrapper baseVertical />);
+    const { toJSON } = render(<Wrapper baseVertical />);
 
-    expect(container).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Wrapper with baseHorizontal and baseVertical', () => {
-    const container = render(<Wrapper base />);
+    const { toJSON } = render(<Wrapper base />);
 
-    expect(container).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   it('renders Wrapper with screen', () => {
-    const container = render(<Wrapper screen />);
+    const { toJSON } = render(<Wrapper screen />);
 
-    expect(container).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 
   describe('flex options', () => {
     it('renders Wrapper with NO row', () => {
-      const container = render(
+      const { toJSON } = render(
         <Wrapper>
           <Wrapper baseHorizontal>
             <Text>Item 1</Text>
@@ -59,11 +59,11 @@ describe('Wrapper', () => {
         </Wrapper>
       );
 
-      expect(container).toMatchSnapshot();
+      expect(toJSON()).toMatchSnapshot();
     });
 
     it('renders Wrapper with row', () => {
-      const container = render(
+      const { toJSON } = render(
         <Wrapper row>
           <Wrapper baseHorizontal>
             <Text>Item 1</Text>
@@ -75,11 +75,11 @@ describe('Wrapper', () => {
         </Wrapper>
       );
 
-      expect(container).toMatchSnapshot();
+      expect(toJSON()).toMatchSnapshot();
     });
 
     it('renders Wrapper with row and reverse', () => {
-      const container = render(
+      const { toJSON } = render(
         <Wrapper row reverse>
           <Wrapper baseHorizontal>
             <Text>Item 1</Text>
@@ -91,11 +91,11 @@ describe('Wrapper', () => {
         </Wrapper>
       );
 
-      expect(container).toMatchSnapshot();
+      expect(toJSON()).toMatchSnapshot();
     });
 
     it('renders Wrapper with reverse', () => {
-      const container = render(
+      const { toJSON } = render(
         <Wrapper reverse>
           <Wrapper baseHorizontal>
             <Text>Item 1</Text>
@@ -107,7 +107,7 @@ describe('Wrapper', () => {
         </Wrapper>
       );
 
-      expect(container).toMatchSnapshot();
+      expect(toJSON()).toMatchSnapshot();
     });
   });
 });

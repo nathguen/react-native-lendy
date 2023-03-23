@@ -1,49 +1,60 @@
-import { fireEvent, render, screen } from '@testing-library/react-native';
-import React, { useState } from 'react';
+import { fireEvent, render } from '@testing-library/react-native';
+import React from 'react';
 
-import { Button, Wrapper, Text, ButtonType, ButtonTypes } from '../';
+import { Button, ButtonTypes } from '../';
 
 const buttonText = 'Click me';
-const renderedText = 'Button pressed';
-
-const TestButton = ({ type }: { type: ButtonType }) => {
-  const [buttonPressed, setButtonPressed] = useState(false);
-
-  return (
-    <Wrapper>
-      <Button
-        type={type}
-        title={buttonText}
-        onPress={() => setButtonPressed(true)}
-      />
-
-      {!!buttonPressed && <Text>{renderedText}</Text>}
-    </Wrapper>
-  );
-};
 
 describe('Button', () => {
+  it('renders and presses primary button', () => {
+    const mockedPress = jest.fn();
+
+    const { toJSON, getByText } = render(
+      <Button title={buttonText} type="primary" onPress={mockedPress} />
+    );
+
+    expect(toJSON()).toMatchSnapshot();
+    expect(getByText(buttonText)).toBeTruthy();
+
+    fireEvent.press(getByText(buttonText));
+    expect(mockedPress).toHaveBeenCalled();
+  });
+
   Object.values(ButtonTypes).forEach((type) => {
     it(`renders and presses ${type} Button`, () => {
-      const baseContainer = render(<TestButton type={type} />);
+      const mockedPress = jest.fn();
 
-      expect(baseContainer).toMatchSnapshot();
-      expect(screen.getByText(buttonText)).toBeTruthy();
+      const { toJSON, getByText } = render(
+        <Button title={buttonText} type={type} onPress={mockedPress} />
+      );
 
-      fireEvent.press(screen.getByText(buttonText));
-      expect(screen.getByText(renderedText, { exact: true })).toBeTruthy();
+      expect(toJSON()).toMatchSnapshot();
+      expect(getByText(buttonText)).toBeTruthy();
+
+      fireEvent.press(getByText(buttonText));
+      expect(mockedPress).toHaveBeenCalled();
     });
   });
 
   describe('disabled state', () => {
     Object.values(ButtonTypes).forEach((type) => {
       it(`renders ${type} Button and prevents presses`, () => {
-        const baseContainer = render(<TestButton type={type} />);
+        const mockedPress = jest.fn();
 
-        expect(baseContainer).toMatchSnapshot();
-        expect(screen.getByText(buttonText)).toBeTruthy();
+        const { toJSON, getByText } = render(
+          <Button
+            disabled
+            title={buttonText}
+            type={type}
+            onPress={mockedPress}
+          />
+        );
 
-        fireEvent.press(screen.getByText(buttonText));
+        expect(toJSON()).toMatchSnapshot();
+        expect(getByText(buttonText)).toBeTruthy();
+
+        fireEvent.press(getByText(buttonText));
+        expect(mockedPress).not.toHaveBeenCalled();
       });
     });
   });
