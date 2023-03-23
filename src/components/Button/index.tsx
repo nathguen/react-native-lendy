@@ -1,6 +1,13 @@
 import { Text } from '@rneui/themed';
 import React, { useMemo, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, View } from 'react-native';
+import {
+  ActivityIndicator,
+  ButtonProps as RNButtonProps,
+  Pressable,
+  StyleSheet,
+  View,
+} from 'react-native';
+
 import Colors from '../../common/colors';
 import FontStyles from '../../common/fonts';
 import CommonStyles from '../../common/styles';
@@ -19,17 +26,17 @@ export enum ButtonTypes {
   Tertiary = 'tertiary',
 }
 
-interface ButtonProps {
+interface ButtonProps extends RNButtonProps {
   type?: ButtonType | ButtonTypes;
-  onPress: () => void;
-  title?: string;
+  onPress?: () => void;
+
   backgroundColor?: string;
   color?: string;
   size?: ButtonSize;
   buttonStyle?: React.CSSProperties;
   titleStyle?: React.CSSProperties;
   containerStyle?: React.CSSProperties;
-  isLoading?: boolean;
+  loading?: boolean;
   loadingColor?: string;
   disabled?: boolean;
   icon?: any;
@@ -49,7 +56,7 @@ const Button = ({
   buttonStyle,
   titleStyle,
   containerStyle,
-  isLoading,
+  loading,
   loadingColor = Colors.White,
   disabled,
   icon,
@@ -64,8 +71,16 @@ const Button = ({
   }, [disabled]);
 
   const isDisabled = useMemo(() => {
-    return disabled || isLoading;
-  }, [disabled, isLoading]);
+    return disabled || loading;
+  }, [disabled, loading]);
+
+  const handleOnPress = useMemo(() => {
+    if (isDisabled) return;
+
+    if (onPress) {
+      onPress();
+    }
+  }, [onPress, isDisabled]);
 
   const buttonTypeStyle = useMemo(() => {
     switch (type) {
@@ -148,7 +163,7 @@ const Button = ({
   return (
     // @ts-ignore
     <Wrapper
-      onPress={disabled ? () => {} : onPress}
+      onPress={handleOnPress}
       onPressIn={() => setIsPressedDown(true)}
       onPressOut={() => setIsPressedDown(false)}
       // @ts-ignore
@@ -208,11 +223,11 @@ const Button = ({
               ...(color ? { color } : {}),
             }}
           >
-            {isLoading ? '' : title}
+            {loading ? '' : title}
           </Text>
         )}
 
-        {!!isLoading && (
+        {!!loading && (
           <View style={buttonStyles.loadingIconWrapper}>
             <ActivityIndicator
               style={buttonStyles.loadingIcon}
