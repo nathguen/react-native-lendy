@@ -18,7 +18,7 @@ const Home = () => {
 
       <Wrapper baseVertical>
         <Text center>
-          You can look around by pressing the <Text bold>menu button</Text>:.
+          You can look around by pressing the <Text bold>menu button</Text>.
         </Text>
       </Wrapper>
 

@@ -4,9 +4,9 @@ import React from 'react';
 import { Colors } from 'react-native-lendy';
 
 import ScreenNames from './constants/screenNames';
-import ButtonsScreen from './screens/Buttons';
+import ButtonScreen from './screens/Button';
 import Home from './screens/Home';
-import InputsScreen from './screens/Inputs';
+import InputScreen from './screens/Input';
 import ScreenTabsScreen from './screens/ScreenTabs';
 
 const Drawer = createDrawerNavigator();
@@ -45,17 +45,17 @@ export default function App() {
           }}
         />
         <Drawer.Screen
-          name={ScreenNames.Buttons}
-          component={ButtonsScreen}
+          name={ScreenNames.Button}
+          component={ButtonScreen}
           options={{
-            title: 'Buttons',
+            title: 'Button',
           }}
         />
         <Drawer.Screen
-          name={ScreenNames.Inputs}
-          component={InputsScreen}
+          name={ScreenNames.Input}
+          component={InputScreen}
           options={{
-            title: 'Inputs',
+            title: 'Input',
           }}
         />
       </Drawer.Navigator>

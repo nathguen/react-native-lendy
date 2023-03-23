@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 type ButtonPressed = 'primary' | 'secondary' | 'tertiary' | '';
 
-const ButtonsScreen = () => {
+const ButtonScreen = () => {
   const [buttonPressed, setButtonPressed] = useState<ButtonPressed>('');
 
   return (
@@ -86,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ButtonsScreen;
+export default ButtonScreen;

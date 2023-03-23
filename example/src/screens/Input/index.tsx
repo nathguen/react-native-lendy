@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Wrapper, Input } from 'react-native-lendy';
 import isEmail from 'validator/lib/isEmail';
 
-const InputsScreen = () => {
+const InputScreen = () => {
   const [email, setEmail] = useState('');
 
   const isValidEmail = useMemo(() => {
@@ -45,4 +45,4 @@ const InputsScreen = () => {
   );
 };
 
-export default InputsScreen;
+export default InputScreen;
