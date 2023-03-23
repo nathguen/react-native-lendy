@@ -63,7 +63,7 @@ interface TextProps extends RNTextProps {
 }
 
 const Text = ({
-  textType,
+  textType = TextTypes.Body,
   color,
   left,
   center,
@@ -98,7 +98,7 @@ const Text = ({
         // @ts-ignore
         ...(!!props.style && props.style),
         ...appliedStyles,
-        ...(!!color && { color }), // allows custom color
+        ...(color && { color }), // allows custom color
         ...(left && styles.textLeft), // text aligns => left
         ...(center && styles.textCenter), // text aligns => center
         ...(right && styles.textRight), // text aligns => right

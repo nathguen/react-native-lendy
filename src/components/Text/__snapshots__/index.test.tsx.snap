@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text renders Text 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Some text
+  </Text>
+</View>
+`;
+
+exports[`Text renders Text with bold 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "700",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Some text
+  </Text>
+</View>
+`;

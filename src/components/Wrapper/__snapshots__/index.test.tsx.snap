@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wrapper flex options renders Wrapper with NO row 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Wrapper flex options renders Wrapper with reverse 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column-reverse",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Wrapper flex options renders Wrapper with row 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Wrapper flex options renders Wrapper with row and reverse 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row-reverse",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 1
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+        "paddingHorizontal": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+        }
+      }
+    >
+      Item 2
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Wrapper renders Wrapper 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+/>
+`;
+
+exports[`Wrapper renders Wrapper with baseHorizontal 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "paddingHorizontal": 8,
+    }
+  }
+/>
+`;
+
+exports[`Wrapper renders Wrapper with baseHorizontal and baseVertical 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "padding": 8,
+    }
+  }
+/>
+`;
+
+exports[`Wrapper renders Wrapper with baseVertical 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "paddingVertical": 8,
+    }
+  }
+/>
+`;
+
+exports[`Wrapper renders Wrapper with children 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Test
+  </Text>
+</View>
+`;
+
+exports[`Wrapper renders Wrapper with screen 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+      "padding": 16,
+    }
+  }
+/>
+`;

@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button disabled state renders primary Button and prevents presses 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "#191919",
+        "borderColor": "#191919",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "elevation": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;
+
+exports[`Button disabled state renders secondary Button and prevents presses 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "transparent",
+        "borderColor": "#191919",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;
+
+exports[`Button disabled state renders tertiary Button and prevents presses 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;
+
+exports[`Button renders and presses primary Button 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "#191919",
+        "borderColor": "#191919",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "elevation": 1,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;
+
+exports[`Button renders and presses secondary Button 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "transparent",
+        "borderColor": "#191919",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;
+
+exports[`Button renders and presses tertiary Button 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "column",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 30,
+        "borderWidth": 3,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingHorizontal": 44,
+        "paddingVertical": 16,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "textAlign": "center",
+        }
+      }
+    >
+      Click me
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#191919",
+        "fontSize": 17,
+        "fontWeight": "400",
+        "lineHeight": 22,
+      }
+    }
+  >
+    Button pressed
+  </Text>
+</View>
+`;

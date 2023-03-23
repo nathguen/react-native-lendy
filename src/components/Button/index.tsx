@@ -1,4 +1,3 @@
-import { Text } from '@rneui/themed';
 import React, { useMemo, useState } from 'react';
 import {
   ActivityIndicator,
@@ -11,6 +10,7 @@ import {
 import Colors from '../../common/colors';
 import FontStyles from '../../common/fonts';
 import CommonStyles from '../../common/styles';
+import Text from '../Text';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export enum ButtonSizes {
@@ -95,7 +95,7 @@ const Button = ({
     }
   }, [type]);
 
-  const buttonTypeTextStyle = useMemo(() => {
+  const buttonTypeTextStyle: StyleSheet.NamedStyles<any> = useMemo(() => {
     switch (type) {
       case ButtonTypes.Primary:
         return buttonStyles.primaryButtonText;
@@ -105,7 +105,7 @@ const Button = ({
     }
   }, [type]);
 
-  const disabledButtonStyle = useMemo(() => {
+  const disabledButtonStyle: StyleSheet.NamedStyles<any> = useMemo(() => {
     if (isDisabled) {
       if (type === ButtonTypes.Primary) {
         return buttonStyles.primaryButtonDisabled;
@@ -118,7 +118,7 @@ const Button = ({
     return {};
   }, [isDisabled, type]);
 
-  const pressedButtonStyle = useMemo(() => {
+  const pressedButtonStyle: StyleSheet.NamedStyles<any> = useMemo(() => {
     if (isPressedDown) {
       if (type === ButtonTypes.Primary) {
         return buttonStyles.primaryButtonPressed;
@@ -131,7 +131,7 @@ const Button = ({
     return {};
   }, [isPressedDown, type]);
 
-  const disabledButtonTextStyle = useMemo(() => {
+  const disabledButtonTextStyle: StyleSheet.NamedStyles<any> = useMemo(() => {
     if (isDisabled) {
       if (type === ButtonTypes.Primary) {
         return buttonStyles.primaryButtonTextDisabled;
@@ -147,7 +147,7 @@ const Button = ({
     return {};
   }, [isDisabled, type]);
 
-  const pressedButtonTextStyle = useMemo(() => {
+  const pressedButtonTextStyle: StyleSheet.NamedStyles<any> = useMemo(() => {
     if (isPressedDown) {
       if (type === ButtonTypes.Secondary) {
         return buttonStyles.secondaryButtonTextPressed;
@@ -159,6 +159,36 @@ const Button = ({
 
     return {};
   }, [isPressedDown, type]);
+
+  const textColor = useMemo(() => {
+    if (color) return color;
+
+    if (titleStyle && titleStyle.color) return titleStyle.color;
+
+    // @ts-ignore
+    if (buttonTypeTextStyle && buttonTypeTextStyle.color) {
+      // @ts-ignore
+      return buttonTypeTextStyle.color;
+    }
+
+    // @ts-ignore
+    if (disabledButtonTextStyle && disabledButtonTextStyle.color) {
+      // @ts-ignore
+      return disabledButtonTextStyle.color;
+    }
+
+    if (pressedButtonTextStyle && pressedButtonTextStyle.color) {
+      return pressedButtonTextStyle.color;
+    }
+
+    return '';
+  }, [
+    color,
+    titleStyle,
+    buttonTypeTextStyle,
+    disabledButtonTextStyle,
+    pressedButtonTextStyle,
+  ]);
 
   return (
     // @ts-ignore
@@ -201,6 +231,7 @@ const Button = ({
       <>
         {!!title && (
           <Text
+            color={textColor as string}
             // @ts-ignore
             style={{
               ...buttonStyles.baseButtonText,

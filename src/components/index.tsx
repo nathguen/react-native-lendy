@@ -1,4 +1,5 @@
 export { default as Button } from './Button/index';
+export * from './Button/index';
 export { default as Input } from './Input';
 export { default as ScreenTabs } from './ScreenTabs/index';
 export { default as Text } from './Text/index';
