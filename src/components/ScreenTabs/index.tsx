@@ -3,7 +3,14 @@ import { StyleSheet } from 'react-native';
 import { TouchableOpacity, View } from 'react-native';
 
 import Colors from '../../common/colors';
+import TestIds from '../../common/testIds';
 import Text from '../Text';
+
+export const getScreenTabsTestId = (tab: string, isSelected: boolean) => {
+  return isSelected
+    ? `${TestIds.ScreenTabSelected}::${tab}`
+    : `${TestIds.ScreenTabUnselected}::${tab}`;
+};
 
 interface ScreenTabsProps {
   tabs: string[];
@@ -29,6 +36,7 @@ const ScreenTabs = ({ tabs, defaultTab, onChangeTab }: ScreenTabsProps) => {
           key={tab}
           onPress={() => handleTabChange(tab)}
           style={styles.tabPressable}
+          testID={getScreenTabsTestId(tab, tab === selectedTab)}
         >
           <Text
             style={{

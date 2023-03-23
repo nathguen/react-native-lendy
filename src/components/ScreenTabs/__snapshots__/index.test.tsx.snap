@@ -1,0 +1,536 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScreenTabs 2 tabs renders the tabs 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabSelected::Tab 1"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 1
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 2,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabUnselected::Tab 2"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 2
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 0,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`ScreenTabs 3 tabs renders the tabs and defaults to the first one without "defaultTab" prop 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabSelected::Tab 1"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 1
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 2,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabUnselected::Tab 2"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 2
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 0,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabUnselected::Tab 3"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 3
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 0,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`ScreenTabs 3 tabs renders the tabs and defaults to the third one 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabUnselected::Tab 1"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 1
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 0,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabUnselected::Tab 2"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 2
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 0,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+  <View
+    accessibilityState={
+      Object {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+        "paddingHorizontal": 32,
+        "paddingVertical": 16,
+      }
+    }
+    testID="ScreenTabSelected::Tab 3"
+  >
+    <Text
+      style={
+        Object {
+          "color": "#191919",
+          "fontSize": 17,
+          "fontWeight": "400",
+          "lineHeight": 22,
+          "marginBottom": 4,
+        }
+      }
+    >
+      Tab 3
+    </Text>
+    <View
+      style={
+        Object {
+          "borderColor": "#ECC850",
+          "borderRadius": 2,
+          "borderWidth": 2,
+          "width": 42,
+        }
+      }
+    />
+  </View>
+</View>
+`;
