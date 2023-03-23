@@ -1,13 +1,13 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-
-import ScreenNames from 'example/src/constants/screenNames';
-import Home from 'example/src/screens/Home';
-import ScreenTabsScreen from 'example/src/screens/ScreenTabs';
 import { Colors } from 'react-native-lendy';
+
+import ScreenNames from './constants/screenNames';
 import ButtonsScreen from './screens/Buttons';
+import Home from './screens/Home';
 import InputsScreen from './screens/Inputs';
+import ScreenTabsScreen from './screens/ScreenTabs';
 
 const Drawer = createDrawerNavigator();
 

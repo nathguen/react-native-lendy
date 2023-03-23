@@ -5,7 +5,7 @@ import FontStyles from './fonts';
 
 const baselineStyles = StyleSheet.create({
   base: {
-    fontFamily: FontStyles.regular,
+    fontWeight: FontStyles.regular,
     color: Colors.Dark,
   },
 });

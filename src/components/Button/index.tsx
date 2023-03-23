@@ -366,7 +366,7 @@ export const buttonStyles = StyleSheet.create({
   },
 
   largeButtonText: {
-    fontFamily: FontStyles.medium,
+    fontWeight: FontStyles.regular,
     fontSize: 20,
     lineHeight: 24,
   },

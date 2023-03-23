@@ -102,7 +102,7 @@ const Text = ({
         ...(left && styles.textLeft), // text aligns => left
         ...(center && styles.textCenter), // text aligns => center
         ...(right && styles.textRight), // text aligns => right
-        ...(bold && { fontFamily: FontStyles.bold }), // bold
+        ...(bold && { fontWeight: FontStyles.bold }), // bold
       }}
     />
   );
