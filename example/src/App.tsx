@@ -8,6 +8,7 @@ import ButtonScreen from './screens/Button';
 import Home from './screens/Home';
 import InputScreen from './screens/Input';
 import ScreenTabsScreen from './screens/ScreenTabs';
+import WrapperScreen from './screens/Wrapper';
 
 const Drawer = createDrawerNavigator();
 
@@ -56,6 +57,13 @@ export default function App() {
           component={InputScreen}
           options={{
             title: 'Input',
+          }}
+        />
+        <Drawer.Screen
+          name={ScreenNames.Wrapper}
+          component={WrapperScreen}
+          options={{
+            title: 'Wrapper',
           }}
         />
       </Drawer.Navigator>

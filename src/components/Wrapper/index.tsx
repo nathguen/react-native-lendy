@@ -3,8 +3,10 @@ import type { ViewProps } from 'react-native';
 import { StyleSheet, View } from 'react-native';
 
 interface WrapperProps extends ViewProps {
-  padding?: number; // allows override
+  row?: boolean;
+  reverse?: boolean;
 
+  padding?: number; // allows override
   base?: boolean;
   baseHorizontal?: boolean;
   baseVertical?: boolean;
@@ -20,11 +22,11 @@ interface WrapperProps extends ViewProps {
    * Centers content vertically and horizontally in the wrapper
    */
   center?: boolean;
-  centerHorizontal?: boolean;
-  centerVertical?: boolean;
 }
 
 const Wrapper = ({
+  row,
+  reverse,
   padding,
   top,
   bottom,
@@ -46,6 +48,12 @@ const Wrapper = ({
         ...(screen && styles.screenWrapper),
         ...(typeof padding === 'number' && { padding }), // allows override
 
+        // flex styles
+        ...(row && styles.wrapperRow),
+        ...(row && reverse && styles.wrapperReverseRow),
+        ...(!row && !reverse && styles.wrapperColumn),
+        ...(!row && reverse && styles.wrapperReverseColumn),
+
         // positioning styles
         ...(typeof top === 'number' && { top }),
         ...(typeof bottom === 'number' && { bottom }),
@@ -63,6 +71,18 @@ const Wrapper = ({
 };
 
 const styles = StyleSheet.create({
+  wrapperRow: {
+    flexDirection: 'row',
+  },
+  wrapperReverseRow: {
+    flexDirection: 'row-reverse',
+  },
+  wrapperColumn: {
+    flexDirection: 'column',
+  },
+  wrapperReverseColumn: {
+    flexDirection: 'column-reverse',
+  },
   baseWrapper: {
     padding: 8,
   },

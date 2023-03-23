@@ -3,6 +3,7 @@ const ScreenNames = {
   ScreenTabs: 'ScreenTabsScreen',
   Button: 'ButtonScreen',
   Input: 'InputScreen',
+  Wrapper: 'WrapperScreen',
 };
 
 export default ScreenNames;
