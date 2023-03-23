@@ -1,4 +1,4 @@
-import { camelCase } from 'lodash';
+import { camelCase, startCase } from 'lodash';
 import React, { useMemo } from 'react';
 import {
   StyleSheet,
@@ -63,7 +63,7 @@ interface TextProps extends RNTextProps {
 }
 
 const Text = ({
-  textType = TextTypes.Body,
+  textType,
   color,
   left,
   center,
@@ -72,13 +72,20 @@ const Text = ({
   ...props
 }: TextProps) => {
   const appliedStyles: StyleSheet.NamedStyles<any> = useMemo(() => {
+    console.log('textType', textType);
     if (textType && CommonStyles[textType]) {
       return CommonStyles[textType];
     }
 
     const commonStyleKey = Object.keys(CommonStyles).find(
       (styleKey: string) => {
-        return Object.keys(props).includes(camelCase(styleKey));
+        const pascalCasedKey = camelCase(styleKey);
+
+        if (Object.keys(props).includes(pascalCasedKey)) {
+          return startCase(camelCase(styleKey)).replace(/\s/g, '');
+        }
+
+        return '';
       }
     );
 
