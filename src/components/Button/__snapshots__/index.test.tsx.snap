@@ -2,6 +2,7 @@
 
 exports[`Button disabled state renders primary Button and prevents presses 1`] = `
 <View
+  onPress={[Function]}
   onPressIn={[Function]}
   onPressOut={[Function]}
   style={
@@ -38,6 +39,7 @@ exports[`Button disabled state renders primary Button and prevents presses 1`] =
 
 exports[`Button disabled state renders secondary Button and prevents presses 1`] = `
 <View
+  onPress={[Function]}
   onPressIn={[Function]}
   onPressOut={[Function]}
   style={
@@ -73,6 +75,7 @@ exports[`Button disabled state renders secondary Button and prevents presses 1`]
 
 exports[`Button disabled state renders tertiary Button and prevents presses 1`] = `
 <View
+  onPress={[Function]}
   onPressIn={[Function]}
   onPressOut={[Function]}
   style={

@@ -72,7 +72,6 @@ const Text = ({
   ...props
 }: TextProps) => {
   const appliedStyles: StyleSheet.NamedStyles<any> = useMemo(() => {
-    console.log('textType', textType);
     if (textType && CommonStyles[textType]) {
       return CommonStyles[textType];
     }

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   ButtonProps as RNButtonProps,
@@ -74,7 +74,7 @@ const Button = ({
     return disabled || loading;
   }, [disabled, loading]);
 
-  const handleOnPress = useMemo(() => {
+  const handleOnPress = useCallback(() => {
     if (isDisabled) return;
 
     if (onPress) {
