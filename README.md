@@ -2,6 +2,10 @@
 
 A reusable component library for Lendy
 
+## Demo
+
+Check out this [expo snack](https://snack.expo.dev/@frostydog01/react-native-lendy-library?platform=web) to see the React Native Lendy library in action.
+
 ## Installation
 
 ```sh
@@ -9,6 +13,81 @@ npm install react-native-lendy
 ```
 
 ## Components
+
+### Text
+
+The `Text` component is a sweetened version of the React Native [`Text` component](https://reactnative.dev/docs/text). React Native Lendy provides some syntactic sugar for ease of rapid development.
+
+#### Basic Usage
+
+
+```jsx
+import { Button, Wrapper } from 'react-native-lendy';
+
+// ...
+
+const MyComponent = () => {
+  const handleButtonPress = () => {};
+
+  return (
+    <Wrapper screen>
+      <Text center largeTitle>
+        Title 1
+      </Text>
+    <Wrapper>
+  );
+};
+```
+
+The `center` (shorthand for `center={true}`) adds a `text-align: center` style to the `Text` component.
+
+The `largeTitle` adds "Large Title" styling to the `Text` component based on the style guide. See the React Native Lendy [snack demo](https://snack.expo.dev/@frostydog01/react-native-lendy-library?platform=web) for context.
+
+
+#### Declarative note
+
+When building using the `Text` component, you may choose to use the `textType` property (e.g., `textType={"LargeTitle"}`), or the individual text type properties (e.g., `largeTitle`). 
+
+React Native Lendy is designed to be declarative, but also acknowledge that it's nice to be able to have alternative paths to accomplish the same thing.
+
+#### Text type properties
+
+The **Default Value** should be assumed to be `false` unless otherwise specified. All properties on `Text` are **optional**.
+
+All text type properties should be assumed to have the following properties unless otherwise stated:
+
+* font weight: `400`
+* color: `#191919` (`Colors.Dark`)
+
+| Property | Accepted Values | Default Value | Notes |
+|----------|------|---------------|-------|
+| textType | `LargeTitle`, `Title1`, `Title2`, `Title3`, `Headline`, `Body`, `Callout`, `Subhead`, `Footnote`, `Caption1`, `Caption2` | `Body` | Can be used to declare `Text` type |
+| `largeTitle` | `boolean` | | font size: `34` <br/>line height: `41` |
+| `title1` | `boolean` | | font size: `28` <br/>line height: `34` |
+| `title2` | `boolean` | | font size: `22` <br/>line height: `24` |
+| `title3` | `boolean` | | font size: `20` <br/>line height: `24` |
+| `headline` | `boolean` | | font size: `17` <br/>line height: `22` <br/>font family: `700` (`FontStyles.bold`) |
+| `body` | `boolean` | `true` | font size: `17` <br/>line height: `22` |
+| `callout` | `boolean` | | font size: `16` <br/>line height: `21` |
+| `subhead` | `boolean` | | font size: `15` <br/>line height: `20` |
+| `footnote` | `boolean` | | font size: `13` <br/>line height: `18` |
+| `caption1` | `boolean` | | font size: `12` <br/>line height: `16` |
+| `caption2` | `boolean` | | font size: `11` <br/>line height: `13` |
+
+
+#### Other properties
+
+All properties here are **optional** and should be assumed to **default** to `false` unless otherwise stated.
+
+| Property | Type | Default Value | Notes |
+|----------|------|---------------|-------|
+| `color` | `string` | | Adds `color` styling to the `Text` |
+| `left` | `boolean` | `true` | The default position for `Text` is to be left aligned |
+| `center` | `boolean` | | Makes `Text` center aligned |
+| `right` | `boolean` | | Makes `Text` right aligned |
+| `bold` | `boolean` | | Makes `Text` **bold** |
+
+
 
 ### Button
 
@@ -34,7 +113,6 @@ const MyComponent = () => {
 };
 ```
 
-See [Lendy Button snack](https://snack.expo.dev/@frostydog01/lendy-buttons) as an example.
 
 #### Button types
 
