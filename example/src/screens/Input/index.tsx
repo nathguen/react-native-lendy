@@ -27,16 +27,11 @@ const InputScreen = () => {
       </Wrapper>
 
       <Wrapper baseVertical>
-        <Input
-          editable={false}
-          secureTextEntry
-          placeholder="This is disabled"
-        />
+        <Input editable={false} placeholder="This is disabled" />
       </Wrapper>
 
       <Wrapper baseVertical>
         <Input
-          secureTextEntry
           placeholder="Input with an error message"
           errorMessage="An error message"
         />
