@@ -8,9 +8,58 @@ Check out this [expo snack](https://snack.expo.dev/@frostydog01/react-native-len
 
 ## Installation
 
-```sh
-npm install react-native-lendy
+
+Install the packages from the root directory of the project (i.e., `react-native-lendy`):
+
+#### Yarn
+
+```bash
+yarn install
 ```
+
+#### npm
+
+```bash
+npm install
+```
+
+Now go to the `example` directory, and install the packages there.
+
+
+#### Yarn
+
+```bash
+cd example && yarn install
+```
+
+
+#### npm
+
+```bash
+cd example && npm install
+```
+
+Go back to the root directory:
+
+```bash
+cd ../
+```
+
+Run the project's dev environment:
+
+
+#### Yarn
+
+```bash
+yarn example ios
+```
+
+#### npm
+
+```bash
+npm example ios
+```
+
 
 ## Components
 
