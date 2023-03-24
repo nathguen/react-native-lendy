@@ -70,7 +70,11 @@ const Input = ({ style, ...props }: InputProps) => {
 
       {!!icon && icon}
 
-      {!!props.required && <Text style={styles.requiredText}>*</Text>}
+      {!!props.required && (
+        <Text color={Colors.Red} style={styles.requiredText}>
+          *
+        </Text>
+      )}
 
       {!!errorMessage && (
         <Text color={Colors.Red} style={styles.errorMessage}>
@@ -105,7 +109,6 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     top: 16,
     right: 16,
-    color: Colors.Red,
   },
 
   errorMessage: {
