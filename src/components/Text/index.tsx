@@ -60,6 +60,16 @@ interface TextProps extends RNTextProps {
   right?: boolean;
 
   bold?: boolean;
+
+  /**
+   * spacing style
+   */
+  mTop?: number;
+  mRight?: number;
+  mBottom?: number;
+  mLeft?: number;
+  mHorizontal?: number;
+  mVertical?: number;
 }
 
 const Text = ({
@@ -69,6 +79,12 @@ const Text = ({
   center,
   right,
   bold,
+  mTop,
+  mRight,
+  mBottom,
+  mLeft,
+  mHorizontal,
+  mVertical,
   ...props
 }: TextProps) => {
   const appliedStyles: StyleSheet.NamedStyles<any> = useMemo(() => {
@@ -109,6 +125,16 @@ const Text = ({
         ...(center && styles.textCenter), // text aligns => center
         ...(right && styles.textRight), // text aligns => right
         ...(bold && { fontWeight: FontStyles.bold }), // bold
+
+        // spacing
+        ...(typeof mTop === 'number' && { marginTop: mTop }),
+        ...(typeof mRight === 'number' && { marginRight: mRight }),
+        ...(typeof mBottom === 'number' && { marginBottom: mBottom }),
+        ...(typeof mLeft === 'number' && { marginLeft: mLeft }),
+        ...(typeof mHorizontal === 'number' && {
+          marginHorizontal: mHorizontal,
+        }),
+        ...(typeof mVertical === 'number' && { marginVertical: mVertical }),
       }}
     />
   );
