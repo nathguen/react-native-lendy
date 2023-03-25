@@ -35,7 +35,7 @@ const CommonStyles = StyleSheet.create({
     ...baselineStyles.base,
     fontSize: 17,
     lineHeight: 22,
-    fontFamily: FontStyles.bold,
+    fontWeight: FontStyles.bold,
   },
   Body: {
     ...baselineStyles.base,
