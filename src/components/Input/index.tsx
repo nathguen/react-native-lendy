@@ -6,13 +6,13 @@ import CommonStyles from '../../common/styles';
 import Text from '../Text';
 import Wrapper from '../Wrapper';
 import { getInputStyles } from './helpers';
-import type { InputStylesProps } from './types';
+import type { InputProps } from './types';
 import ValidIcon from './ValidIcon';
 
 export { getInputStyles } from './helpers';
 export { InputProps } from './types';
 
-const Input = (props: InputStylesProps) => {
+const Input = (props: InputProps) => {
   const { isValid, errorMessage } = props;
 
   const [isActive, setIsActive] = useState(false);
