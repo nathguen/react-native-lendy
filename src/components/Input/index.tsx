@@ -1,31 +1,15 @@
 import React, { useMemo, useState } from 'react';
-import { StyleSheet, TextInput, TextInputProps } from 'react-native';
-import { decode } from 'html-entities';
+import { StyleSheet, TextInput } from 'react-native';
 
 import Colors from '../../common/colors';
 import CommonStyles from '../../common/styles';
 import Text from '../Text';
 import Wrapper from '../Wrapper';
+import { getInputStyles } from './helpers';
+import type { InputStylesProps } from './types';
+import ValidIcon from './ValidIcon';
 
-const ValidIcon = () => {
-  return (
-    <Wrapper style={styles.validIconWrapper}>
-      <Wrapper style={styles.validIcon}>
-        <Text color={Colors.White} style={styles.validIconText}>
-          {decode('&check;')}
-        </Text>
-      </Wrapper>
-    </Wrapper>
-  );
-};
-
-interface InputProps extends TextInputProps {
-  errorMessage?: string;
-  required?: boolean;
-  isValid?: boolean;
-}
-
-const Input = ({ style, ...props }: InputProps) => {
+const Input = (props: InputStylesProps) => {
   const { isValid, errorMessage } = props;
 
   const [isActive, setIsActive] = useState(false);
@@ -38,32 +22,17 @@ const Input = ({ style, ...props }: InputProps) => {
     return null;
   }, [isValid]);
 
+  const computedStyles = useMemo(
+    () => getInputStyles({ ...props, isActive }),
+    [props, isActive]
+  );
+
   return (
     <Wrapper>
       <TextInput
         onFocus={() => setIsActive(true)}
         onBlur={() => setIsActive(false)}
-        style={{
-          ...styles.input,
-
-          // @ts-ignore
-          ...(!!style && style),
-
-          // active style
-          ...(isActive && styles.inputActive),
-
-          // error style
-          ...(!!errorMessage && styles.inputError),
-
-          ...(props.multiline && {
-            paddingTop: 16,
-            paddingBottom: 16,
-            minHeight: 80,
-          }),
-          ...(props.editable === false && {
-            color: Colors.Gray,
-          }),
-        }}
+        style={computedStyles}
         placeholderTextColor={Colors.Gray}
         {...props}
       />
