@@ -18,6 +18,22 @@ interface WrapperProps extends ViewProps {
   left?: number;
   right?: number;
 
+  // margin
+  mTop?: number;
+  mRight?: number;
+  mBottom?: number;
+  mLeft?: number;
+  mHorizontal?: number;
+  mVertical?: number;
+
+  // padding
+  pTop?: number;
+  pRight?: number;
+  pBottom?: number;
+  pLeft?: number;
+  pHorizontal?: number;
+  pVertical?: number;
+
   /**
    * Centers content vertically and horizontally in the wrapper
    */
@@ -37,6 +53,18 @@ const Wrapper = ({
   baseVertical,
   screen,
   center,
+  mTop,
+  mRight,
+  mBottom,
+  mLeft,
+  mHorizontal,
+  mVertical,
+  pTop,
+  pRight,
+  pBottom,
+  pLeft,
+  pHorizontal,
+  pVertical,
   ...props
 }: WrapperProps) => {
   return (
@@ -60,6 +88,30 @@ const Wrapper = ({
         ...(typeof left === 'number' && { left }),
         ...(typeof right === 'number' && { right }),
         ...(center && styles.centerContent),
+
+        // margin styles
+        ...(typeof mTop === 'number' && { marginTop: mTop }),
+        ...(typeof mRight === 'number' && { marginRight: mRight }),
+        ...(typeof mBottom === 'number' && { marginBottom: mBottom }),
+        ...(typeof mLeft === 'number' && { marginLeft: mLeft }),
+        ...(typeof mHorizontal === 'number' && {
+          marginHorizontal: mHorizontal,
+        }),
+        ...(typeof mVertical === 'number' && {
+          marginVertical: mVertical,
+        }),
+
+        // padding styles
+        ...(typeof pTop === 'number' && { paddingTop: pTop }),
+        ...(typeof pRight === 'number' && { paddingRight: pRight }),
+        ...(typeof pBottom === 'number' && { paddingBottom: pBottom }),
+        ...(typeof pLeft === 'number' && { paddingLeft: pLeft }),
+        ...(typeof pHorizontal === 'number' && {
+          paddingHorizontal: pHorizontal,
+        }),
+        ...(typeof pVertical === 'number' && {
+          paddingVertical: pVertical,
+        }),
 
         // @ts-ignore
         ...(!!props.style && props.style), // allows for style override

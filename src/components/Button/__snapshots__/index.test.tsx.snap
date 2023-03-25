@@ -8,7 +8,6 @@ exports[`Button disabled state renders primary Button and prevents presses 1`] =
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "#F3ECD1",
       "borderColor": "#F3ECD1",
       "borderRadius": 30,
@@ -24,7 +23,7 @@ exports[`Button disabled state renders primary Button and prevents presses 1`] =
   <Text
     style={
       Object {
-        "color": "#FFFFFF",
+        "color": "#BCB7A3",
         "fontSize": 17,
         "fontWeight": "400",
         "lineHeight": 22,
@@ -45,12 +44,12 @@ exports[`Button disabled state renders secondary Button and prevents presses 1`]
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "transparent",
       "borderColor": "#BCB7A3",
       "borderRadius": 30,
       "borderWidth": 3,
       "flexDirection": "row",
+      "fontWeight": "500",
       "justifyContent": "center",
       "paddingHorizontal": 44,
       "paddingVertical": 16,
@@ -81,12 +80,12 @@ exports[`Button disabled state renders tertiary Button and prevents presses 1`] 
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderRadius": 30,
       "borderWidth": 3,
       "flexDirection": "row",
+      "fontWeight": "500",
       "justifyContent": "center",
       "paddingHorizontal": 44,
       "paddingVertical": 16,
@@ -143,7 +142,6 @@ exports[`Button renders and presses primary Button 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "#191919",
       "borderColor": "#191919",
       "borderRadius": 30,
@@ -206,7 +204,6 @@ exports[`Button renders and presses primary button 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "#191919",
       "borderColor": "#191919",
       "borderRadius": 30,
@@ -269,12 +266,12 @@ exports[`Button renders and presses secondary Button 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "transparent",
       "borderColor": "#191919",
       "borderRadius": 30,
       "borderWidth": 3,
       "flexDirection": "row",
+      "fontWeight": "500",
       "justifyContent": "center",
       "paddingHorizontal": 44,
       "paddingVertical": 16,
@@ -331,12 +328,12 @@ exports[`Button renders and presses tertiary Button 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "alignSelf": "flex-start",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderRadius": 30,
       "borderWidth": 3,
       "flexDirection": "row",
+      "fontWeight": "500",
       "justifyContent": "center",
       "paddingHorizontal": 44,
       "paddingVertical": 16,
