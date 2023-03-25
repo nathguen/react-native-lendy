@@ -1,6 +1,6 @@
 import type { TextInputProps } from 'react-native';
 
-interface InputProps extends TextInputProps {
+export interface InputProps extends TextInputProps {
   errorMessage?: string;
   required?: boolean;
   isValid?: boolean;
