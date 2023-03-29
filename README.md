@@ -4,6 +4,12 @@ A reusable component library for Lendy
 
 ## Demo
 
+
+
+https://user-images.githubusercontent.com/6416887/228397288-e4f911d6-e9b4-48ba-aab3-b7fd0ab54e38.mov
+
+
+
 Check out this [expo snack](https://snack.expo.dev/@frostydog01/react-native-lendy-library?platform=web) to see the React Native Lendy library in action.
 
 ## Installation
